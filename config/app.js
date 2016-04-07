@@ -1,6 +1,6 @@
 module.exports = {
   port: process.env.PORT || 3000,
-  databaseUrl: 'mongodb://localhost/dose-app',
+  databaseUrl: process.env.MONGOLAB_URI || 'mongodb://localhost/dose-app',
   secret: 'spoonfullofsugarhelpsthemedicinegodown',
-  appUrl: 'http://localhost:8000'
+  appUrl: process.env.NODE_ENV === 'production' ? 'https://wdi-dose/' : 'http://localhost:8000/'
 }

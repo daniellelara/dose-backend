@@ -1,0 +1,27 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^5.7.0",
+    "mongoose": "4.1.1",
+    "morgan": "^1.7.0",
+    "multer": "^1.1.0",
+    "multer-s3": "^1.4.1",
+    "request-promise": "^1.0.2",
+    "s3": "^4.4.0",
+    "socket.io": "^1.4.5",
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

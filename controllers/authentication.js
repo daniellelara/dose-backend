@@ -122,15 +122,16 @@ function github(req, res) {
   .then(function(profile){
     console.log(profile);
     //now we find or create a new user with these github credentials
-    return User.findOne({email: profile.email})
+    return User.findOne({username: profile.username})
       .then(function(user){
         if(user) {
           user.githubId = profile.id;
           user.picture = user.picture || profile.avatar_url;
         } else {
-          
+
           user = new User({
             githubId: profile.id,
+            username: profile.username,
             name: profile.name,
             password: profile.id,
             picture: profile.avatar_url,

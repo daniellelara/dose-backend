@@ -16,7 +16,7 @@ function register(req, res) {
       return res.status(400).json({ message: err.toString() });
     }
 
-    var payload = { _id: user._id, username: user.username };
+    var payload = { _id: user._id, name: user.name };
     var token = jwt.sign(payload, secret, "24h");
     return res.status(200).json({ message: "Thanks for registering", user: user, token: token });
   });
@@ -27,7 +27,7 @@ function login(req, res) {
     if(err) return res.send(500).json({ message: err });
     if(!user || !user.validatePassword(req.body.password)) return res.status(401).json({ message: "Unauthorized" });
 
-    var payload = { _id: user._id, username: user.username };
+    var payload = { _id: user._id, name: user.name };
     var token = jwt.sign(payload, secret, "24h");
     return res.status(200).json({ message: "Login successful", user: user, token: token });
   });

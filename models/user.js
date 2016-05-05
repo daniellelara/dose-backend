@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var userSchema = mongoose.Schema({
-  name: { type: String, required: true },
+  name: String,
   email: { type: String, unique: true, required: true },
   tools: [],
   notes: [{ type: mongoose.Schema.ObjectId, ref: 'Note' }],
